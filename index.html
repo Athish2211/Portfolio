@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Athish Raj | Data Science Portfolio</title>
+    <meta name="description" content="Portfolio of Athish Raj, Data Science Graduate.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- AWS Instance Banner -->
+    <div id="instance-banner">
+        <span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14" />
+                <path d="M12 5v14" />
+            </svg>
+            Served by Instance: <strong id="instance-id">loading...</strong>
+        </span>
+    </div>
+
+    <!-- Dynamic Background Elements -->
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+    <div class="bg-shape shape-3"></div>
+
+    <main class="container">
+        <!-- Theme Toggle Button -->
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme" onclick="toggleTheme()">
+            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+        <!-- Dynamic Side Navbar -->
+        <div class="nav-trigger-area"></div>
+        <nav class="side-nav">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#languages">Languages</a></li>
+                <li><a href="#strengths">Strengths</a></li>
+            </ul>
+        </nav>
+
+        <!-- Hero Section -->
+        <header id="home" class="hero slide-up">
+            <div class="hero-content-wrapper">
+                <div class="hero-image-container">
+                    <!-- Replace 'placeholder.jpg' with your actual image filename -->
+                    <img src="Portfolioimage.jpeg" alt="Athish Raj" class="hero-image" id="profile-img">
+                    <div class="image-glow"></div>
+                </div>
+                <div class="hero-inner">
+                    <div class="greeting">Hello, I'm</div>
+                    <h1 class="gradient-text">Athish Raj</h1>
+                    <h2 class="subtitle">Data Science Graduate</h2>
+                    <p class="summary-text">
+                        Dedicated Data Science graduate with expertise in programming and statistics. Experienced in
+                        data
+                        analysis, machine learning, and mobile app development. Always seeking to leverage my skills for
+                        impactful projects.
+                    </p>
+                    <div class="social-links">
+                        <a href="mailto:athis2211@gmail.com" class="btn btn-primary glow-effect"
+                            onclick="copyEmail(event)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <span id="email-text">Email Me</span>
+                        </a>
+                        <a href="https://linkedin.com/in/athish-raj-91b86a29b" target="_blank"
+                            class="btn btn-secondary glass-btn">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                </path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                            LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section slide-up" style="animation-delay: 0.2s;">
+            <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="header-line"></div>
+            </div>
+
+            <div class="project-filters mt-3 mb-4">
+                <button class="filter-btn active" onclick="filterProjects('all', event)">All</button>
+                <button class="filter-btn" onclick="filterProjects('ml', event)">Machine Learning & AI</button>
+                <button class="filter-btn" onclick="filterProjects('web', event)">App & Web Development</button>
+                <button class="filter-btn" onclick="filterProjects('other', event)">Other Software</button>
+            </div>
+
+            <!-- Machine Learning & AI -->
+            <div class="project-category-block" data-category="ml">
+                <h3 class="category-heading mt-3">Machine Learning & AI</h3>
+                <div class="projects-grid mt-3">
+                <article class="project-card glass-card hover-tilt">
+                    <div class="card-top">
+                        <h3>Accident Severity Prediction</h3>
+                        <a href="https://github.com/Athish2211/Accident-Severity-Prediciton-using-PySparkML.git" target="_blank" class="github-link" title="View Source"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                    </div>
+                    <p class="project-role">PySpark Distributed ML Pipeline</p>
+                    <ul class="feature-list">
+                        <li>Analyzed 2M+ crash records with 29 attributes using PySpark MLlib.</li>
+                        <li>Implemented multiclass classification via Logistic Regression and Spark XGBoost.</li>
+                        <li>Processed missing values and balanced datasets using SMOTE algorithm to ensure robust model performance.</li>
+                        <li>Deployed the trained model as an inference pipeline to quickly generate risk scores on incoming traffic data.</li>
+                    </ul>
+                </article>
+
+                <article class="project-card glass-card hover-tilt">
+                    <div class="card-top">
+                        <h3>Emotion Recognition</h3>
+                        <a href="https://github.com/Athish2211/Emotion-Recognition-.git" target="_blank" class="github-link" title="View Source"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                    </div>
+                    <p class="project-role">Deep Learning System</p>
+                    <ul class="feature-list">
+                        <li>Analyzed 35,887 facial expressions, outperforming baseline accuracy by 30%.</li>
+                        <li>Developed an end-to-end preprocessing script to normalize pixel intensity and map grayscale facial data efficiently.</li>
+                        <li>Leveraged dropout layers and dynamic learning rate adjustments to prevent model overfitting.</li>
+                    </ul>
+                </article>
+
+                <article class="project-card glass-card hover-tilt">
+                    <div class="card-top">
+                        <h3>AI Generated Art Popularity</h3>
+                        <a href="https://github.com/Athish2211/AI-Generated-art-popularity-ML-model.git" target="_blank" class="github-link" title="View Source"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                    </div>
+                    <p class="project-role">Predictive ML Model</p>
+                    <ul class="feature-list">
+                        <li>Built a model to predict the popularity of AI-generated art based on aesthetic factors.</li>
+                        <li>Handled high-dimensional feature engineering, translating visual elements into structured numerical parameters.</li>
+                        <li>Evaluated multiple regressors including Random Forest and Support Vector Machines to achieve optimal loss curves.</li>
+                    </ul>
+                </article>
+
+                <article class="project-card glass-card hover-tilt">
+                    <div class="card-top">
+                        <h3>Voice Emotion Detection</h3>
+                        <a href="https://github.com/Athish2211/Emotion-detection-using-voice-signals.git" target="_blank" class="github-link" title="View Source"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                    </div>
+                    <p class="project-role">Voice Signal Processing</p>
+                    <ul class="feature-list">
+                        <li>Implemented a machine learning system utilizing voice signal processing to classify emotions.</li>
+                        <li>Extracted MFCC (Mel-frequency cepstral coefficients) and spectrogram features using Librosa.</li>
+                        <li>Created a continuous streaming audio ingestion component to enable real-time emotional analysis.</li>
+                    </ul>
+                </article>
+            </div>
+            </div>
+
+            <!-- App & Web Development -->
+            <div class="project-category-block" data-category="web">
+                <h3 class="category-heading mt-3">App & Web Development</h3>
+                <div class="projects-grid mt-3">
+                <article class="project-card glass-card hover-tilt">
+                    <div class="card-top">
+                        <h3>Scholar Bud</h3>
+                        <a href="https://github.com/Athish2211/ScholarBud.git" target="_blank" class="github-link" title="View Source"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                    </div>
+                    <p class="project-role">Android Application</p>
+                    <ul class="feature-list">
+                        <li>A Classroom Management Application with 2 user roles containing 8+ core features.</li>
+                        <li>Programmed secure authentication and real-time database synchronization via Firebase backend.</li>
+                        <li>Designed intuitive XML layouts, ensuring accessibility and dynamic fragment re-loading across mobile resolutions.</li>
+                    </ul>
+                </article>
+
+                <article class="project-card glass-card hover-tilt">
+                    <div class="card-top">
+                        <h3>NGD Project</h3>
+                        <a href="https://github.com/Athish2211/NGD-project.git" target="_blank" class="github-link" title="View Source"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                    </div>
+                    <p class="project-role">Web Application</p>
+                    <ul class="feature-list">
+                        <li>Developed a responsive web application leveraging modern frontend frameworks and JavaScript.</li>
+                        <li>Engineered interactive RESTful API endpoints for seamless frontend-backend communication.</li>
+                        <li>Refined user interface components with custom CSS variables to guarantee consistent and dynamic styling behavior.</li>
+                    </ul>
+                </article>
+
+                <article class="project-card glass-card hover-tilt">
+                    <div class="card-top">
+                        <h3>Recturner Book</h3>
+                        <a href="https://github.com/Athish2211/RECTURNER_BOOK.git" target="_blank" class="github-link" title="View Source"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                    </div>
+                    <p class="project-role">Web Application</p>
+                    <ul class="feature-list">
+                        <li>Constructed a robust JavaScript-based web application.</li>
+                        <li>Facilitated rapid data retrieval utilizing asynchronous fetch mechanisms and efficient state management.</li>
+                        <li>Scaled modular components enabling rapid iteration and future feature expansion hooks.</li>
+                    </ul>
+                </article>
+            </div>
+            </div>
+
+            <!-- Other Software -->
+            <div class="project-category-block" data-category="other">
+                <h3 class="category-heading mt-3">Other Software</h3>
+                <div class="projects-grid mt-3">
+                <article class="project-card glass-card hover-tilt">
+                    <div class="card-top">
+                        <h3>Wordle Game</h3>
+                        <a href="https://github.com/Athish2211/A-simple-WORDLE-game.git" target="_blank" class="github-link" title="View Source"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                    </div>
+                    <p class="project-role">Interactive Demo</p>
+                    <ul class="feature-list">
+                        <li>Recreated the popular Wordle mechanic logic using Python.</li>
+                        <li>Developed stringent input-validation loops and a dynamically generating visual board output within terminal.</li>
+                        <li>Structured code logic into reusable functions, prioritizing object-oriented programming principles for game states.</li>
+                    </ul>
+                </article>
+            </div>
+            </div>
+        </section>
+
+        <!-- Leadership & Achievements Section -->
+        <section id="achievements" class="section slide-up" style="animation-delay: 0.3s;">
+            <div class="section-header">
+                <h2 class="section-title">Positions Held</h2>
+                <div class="header-line"></div>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Achievement 1 -->
+                <article class="project-card glass-card hover-tilt">
+                    <div class="card-top">
+                        <h3>Chapter Leader</h3>
+                    </div>
+                    <p class="project-role">U&I Teach Program</p>
+                    <ul class="feature-list">
+                        <li>Guided 8 leaders on how to handle a centre for learning which impacted 80 kids.</li>
+                    </ul>
+                </article>
+
+                <!-- Achievement 2 -->
+                <article class="project-card glass-card hover-tilt">
+                    <div class="card-top">
+                        <h3>President</h3>
+                    </div>
+                    <p class="project-role">Electronics Club, SJPUC • 2022–2023</p>
+                    <ul class="feature-list">
+                        <li>Organised technical events and quizzes for students from various colleges.</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <!-- Two Column Layout for Skills & Education -->
+        <div class="two-col-layout slide-up" style="animation-delay: 0.4s;">
+            <!-- Skills Section -->
+            <section id="skills" class="section">
+                <div class="section-header">
+                    <h2 class="section-title">Technical Arsenal</h2>
+                    <div class="header-line"></div>
+                </div>
+                <div class="glass-card p-6">
+                    <div class="tech-category">
+                        <h4>Languages</h4>
+                        <div class="skills-wrapper">
+                            <div class="skill-pill highlight">Python</div>
+                            <div class="skill-pill">Kotlin</div>
+                            <div class="skill-pill">SQL</div>
+                            <div class="skill-pill">Java</div>
+                        </div>
+                    </div>
+
+                    <div class="tech-category mt-3">
+                        <h4>Libraries</h4>
+                        <div class="skills-wrapper">
+                            <div class="skill-pill">Numpy</div>
+                            <div class="skill-pill">Pandas</div>
+                            <div class="skill-pill">Scikit-learn</div>
+                            <div class="skill-pill">Tensorflow</div>
+                            <div class="skill-pill">Keras</div>
+                            <div class="skill-pill">Matplotlib</div>
+                            <div class="skill-pill">Seaborn</div>
+                        </div>
+                    </div>
+
+                    <div class="tech-category mt-3">
+                        <h4>Technologies & Tools</h4>
+                        <div class="skills-wrapper">
+                            <div class="skill-pill">Docker</div>
+                            <div class="skill-pill">Jenkins</div>
+                            <div class="skill-pill">Git / GitHub</div>
+                            <div class="skill-pill">Microsoft Power BI</div>
+                            <div class="skill-pill">NoSQL</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education Section -->
+            <section id="education" class="section">
+                <div class="section-header">
+                    <h2 class="section-title">Education</h2>
+                    <div class="header-line"></div>
+                </div>
+                <div class="glass-card p-6">
+                    <div class="edu-item">
+                        <h4>B.E. Computer Science (Data Science)</h4>
+                        <span class="edu-meta">B.M.S College of Engineering • 08/2023</span>
+                    </div>
+                    <div class="edu-item mt-3">
+                        <h4>PUC (PCM with Electronics)</h4>
+                        <span class="edu-meta">St. Joseph’s Pre-University College • 06/2021 – 05/2023</span>
+                    </div>
+                    <div class="edu-item mt-3">
+                        <h4>SSLC</h4>
+                        <span class="edu-meta">M.E.S Kishore Kendra • 06/2019 – 05/2021</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="section slide-up" style="animation-delay: 0.45s;">
+            <div class="section-header">
+                <h2 class="section-title">Certifications</h2>
+                <div class="header-line"></div>
+            </div>
+            
+            <div class="projects-grid">
+                <article class="project-card glass-card hover-tilt">
+                    <div class="card-top">
+                        <h3>AI Foundations</h3>
+                    </div>
+                    <p class="project-role">Oracle Cloud Infrastructure</p>
+                    <ul class="feature-list mt-3">
+                        <li>Demonstrated proficiency in core AI concepts, frameworks, and deployment on OCI.</li>
+                    </ul>
+                </article>
+                <article class="project-card glass-card hover-tilt">
+                    <div class="card-top">
+                        <h3>Video Engineering</h3>
+                    </div>
+                    <p class="project-role">Amagi Media Labs</p>
+                    <ul class="feature-list mt-3">
+                        <li>Gained fundamental technical knowledge in advanced streaming and broadcast architectures.</li>
+                    </ul>
+                </article>
+                <article class="project-card glass-card hover-tilt">
+                    <div class="card-top">
+                        <h3>Nutanix Associate</h3>
+                    </div>
+                    <p class="project-role">Multicloud Infrastructure</p>
+                    <ul class="feature-list mt-3">
+                        <li>Certified understanding of virtualization infrastructure, hybrid cloud, and enterprise architecture.</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <!-- Two Column Layout for Languages & Strengths -->
+        <div class="two-col-layout slide-up" style="animation-delay: 0.5s;">
+            <!-- Languages Section -->
+            <section id="languages" class="section">
+                <div class="section-header">
+                    <h2 class="section-title">Languages</h2>
+                    <div class="header-line"></div>
+                </div>
+                <div class="glass-card p-6">
+                    <div class="skills-wrapper">
+                        <div class="skill-pill highlight">English - Proficient</div>
+                        <div class="skill-pill highlight">Kannada - Native</div>
+                        <div class="skill-pill highlight">Hindi - Intermediate</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Strengths Section -->
+            <section id="strengths" class="section">
+                <div class="section-header">
+                    <h2 class="section-title">Strengths</h2>
+                    <div class="header-line"></div>
+                </div>
+                <div class="glass-card p-6">
+                    <div class="skills-wrapper">
+                        <div class="skill-pill">Patience</div>
+                        <div class="skill-pill">Planning</div>
+                        <div class="skill-pill">Time Management</div>
+                        <div class="skill-pill">Adaptability</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 Athish Raj</p>
+    </footer>
+
+    <script>
+        // Theme Toggle Logic
+        function toggleTheme() {
+            document.body.classList.toggle('light-mode');
+            const isLight = document.body.classList.contains('light-mode');
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+            const sun = document.querySelector('.sun-icon');
+            const moon = document.querySelector('.moon-icon');
+            if(isLight) {
+                sun.style.display = 'block';
+                moon.style.display = 'none';
+            } else {
+                sun.style.display = 'none';
+                moon.style.display = 'block';
+            }
+        }
+        
+        // Restore Theme
+        if(localStorage.getItem('theme') === 'light') toggleTheme();
+
+        // Filter Projects
+        function filterProjects(category, event) {
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            document.querySelectorAll('.project-category-block').forEach(block => {
+                if (category === 'all' || block.dataset.category === category) {
+                    block.style.display = 'block';
+                } else {
+                    block.style.display = 'none';
+                }
+            });
+        }
+
+        // Fetch instance logic
+        fetch('/instance')
+            .then(response => response.text())
+            .then(data => {
+                const badge = document.getElementById('instance-id');
+                badge.textContent = data.trim() ? data : 'local-dev';
+            })
+            .catch(() => {
+                document.getElementById('instance-id').textContent = 'local-dev';
+            });
+
+        // Email Copy Logic
+        function copyEmail(e) {
+            e.preventDefault();
+            navigator.clipboard.writeText('athis2211@gmail.com').then(() => {
+                const btnText = document.getElementById('email-text');
+                const original = btnText.textContent;
+                btnText.textContent = 'Copied!';
+                setTimeout(() => btnText.textContent = original, 2000);
+            }).catch(err => console.error("Could not copy text: ", err));
+            // Try to open email client as a fallback
+            window.location.href = 'mailto:athis2211@gmail.com';
+        }
+    </script>
+</body>
+
+</html>
